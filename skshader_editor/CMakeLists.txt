@@ -105,3 +105,13 @@ skshaderc_compile_headers(skshader_editor
     ${CMAKE_BINARY_DIR}/shaders_editor/
     "-e -t xge"
     imgui_shader.hlsl )
+
+install(TARGETS skshader_editor
+        RUNTIME DESTINATION bin)
+
+install(DIRECTORY ${CMAKE_BINARY_DIR}/shaders_editor/
+        DESTINATION share/skshader_editor/shaders
+        FILES_MATCHING PATTERN "*.h")
+
+install(FILES CascadiaMono.ttf test.png
+        DESTINATION share/skshader_editor)
